@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct SecondView: View {
+    @Environment(\.presentationMode) var presentationMode
     var name: String
      
     var body: some View {
-        Text("Hello \(name)!")
+        Button("Dismiss") {
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
@@ -26,7 +29,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSheet) {
             // contents of the sheet
-            SecondView(name: "@Estonia")
+            SecondView(name: "@Estonia" )
         }
     }
 }
