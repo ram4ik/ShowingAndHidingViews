@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct SecondView: View {
+    var name: String
+     
     var body: some View {
-        Text("Second View")
+        Text("Hello \(name)!")
     }
 }
 
@@ -24,7 +26,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSheet) {
             // contents of the sheet
-            SecondView()
+            SecondView(name: "@Estonia")
         }
     }
 }
